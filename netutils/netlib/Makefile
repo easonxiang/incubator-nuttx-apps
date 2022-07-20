@@ -39,10 +39,10 @@ CSRCS += netlib_setdripv4addr.c netlib_setipv4netmask.c
 CSRCS += netlib_getdripv4addr.c netlib_getipv4netmask.c
 CSRCS += netlib_ipv4adaptor.c
 ifeq ($(CONFIG_NET_ARP),y)
-CSRCS += netlib_getarp.c netlib_setarp.c netlib_delarp.c
-ifeq ($(CONFIG_NETLINK_ROUTE),y)
-CSRCS += netlib_getarptab.c
-endif
+  CSRCS += netlib_getarp.c netlib_setarp.c netlib_delarp.c
+  ifeq ($(CONFIG_NETLINK_ROUTE),y)
+    CSRCS += netlib_getarptab.c
+  endif
 endif
 ifeq ($(CONFIG_NETDB_DNSCLIENT),y)
 CSRCS += netlib_setipv4dnsaddr.c

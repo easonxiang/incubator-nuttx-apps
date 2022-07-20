@@ -21,11 +21,12 @@
 
 USAGE="USAGE: mkkconfig.sh [-d] [-h] [-m <menu>] [-o <kconfig-file>]"
 KCONFIG=Kconfig
+WORKDIR=$PWD
 unset MENU
 
 while [ ! -z "$1" ]; do
   case $1 in
-    -d )
+    -v )
       set -x
       ;;
     -m )
@@ -35,6 +36,10 @@ while [ ! -z "$1" ]; do
     -o )
       shift
       KCONFIG=$1
+      ;;
+    -d )
+      shift
+      WORKDIR=`readlink -f $1`
       ;;
     -h )
       echo $USAGE
@@ -49,14 +54,18 @@ while [ ! -z "$1" ]; do
   shift
 done
 
+KCONFIG=$WORKDIR/$KCONFIG
+KCONFIG_LIST=`ls -1 ${WORKDIR}/*/Kconfig 2>/dev/null`
 
-if [ -f ${KCONFIG} ]; then
-  rm ${KCONFIG} || { echo "ERROR: Failed to remove $PWD/${KCONFIG}"; exit 1; }
+if [ -z "${KCONFIG_LIST}" ]; then
+  exit 0
 fi
 
-echo mkkconfig in $PWD
+if [ -f ${KCONFIG} ]; then
+  rm ${KCONFIG} || { echo "ERROR: Failed to remove ${WORKDIR}/${KCONFIG}"; exit 1; }
+fi
 
-KCONFIG_LIST=`ls -1 $PWD/*/Kconfig`
+echo mkkconfig in ${WORKDIR}
 
 echo "#" > ${KCONFIG}
 echo "# For a description of the syntax of this configuration file," >> ${KCONFIG}

@@ -28,14 +28,14 @@ CSRCS += nsh_timcmds.c nsh_envcmds.c nsh_syscmds.c nsh_dbgcmds.c
 
 ifeq ($(CONFIG_FILE_STREAM),y)
 CSRCS += nsh_session.c
-ifeq ($(CONFIG_NSH_CONSOLE_LOGIN),y)
-CSRCS += nsh_login.c
-endif
+  ifeq ($(CONFIG_NSH_CONSOLE_LOGIN),y)
+  CSRCS += nsh_login.c
+  endif
 else
-CSRCS += nsh_stdsession.c
-ifeq ($(CONFIG_NSH_CONSOLE_LOGIN),y)
-CSRCS += nsh_stdlogin.c
-endif
+  CSRCS += nsh_stdsession.c
+  ifeq ($(CONFIG_NSH_CONSOLE_LOGIN),y)
+  CSRCS += nsh_stdlogin.c
+  endif
 endif
 
 CSRCS += nsh_fsutils.c
@@ -57,11 +57,10 @@ CSRCS += nsh_romfsetc.c
 endif
 
 ifeq ($(CONFIG_NET),y)
-CSRCS += nsh_netcmds.c
-
-ifeq ($(CONFIG_NET_ROUTE),y)
-CSRCS += nsh_routecmds.c
-endif
+  CSRCS += nsh_netcmds.c
+  ifeq ($(CONFIG_NET_ROUTE),y)
+    CSRCS += nsh_routecmds.c
+  endif
 endif
 
 ifneq ($(CONFIG_DISABLE_MOUNTPOINT),y)
