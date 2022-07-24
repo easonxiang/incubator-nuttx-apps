@@ -29,5 +29,3 @@ add_subdirectory(wakeonlan)
 add_subdirectory(webclient)
 add_subdirectory(webserver)
 add_subdirectory(xmlrpc)
-
-nuttx_generate_kconfig(MENUDESC "Network Utilities")

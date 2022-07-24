@@ -1,0 +1,6 @@
+source "$APPSDIR/modbus/Kconfig"
+source "$APPSDIR/nshlib/Kconfig"
+source "$APPSDIR/platform/Kconfig"
+source "$APPSDIR/fsutils/Kconfig"
+source "$APPSDIR/netutils/Kconfig"
+source "$APPSDIR/system/Kconfig"

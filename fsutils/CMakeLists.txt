@@ -7,5 +7,3 @@ add_subdirectory(mkfatfs)
 #add_subdirectory(mkmbr)
 #add_subdirectory(mksmartfs)
 add_subdirectory(passwd)
-
-nuttx_generate_kconfig(MENUDESC "File System Utilities")

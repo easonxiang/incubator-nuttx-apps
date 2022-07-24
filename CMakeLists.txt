@@ -52,5 +52,3 @@ add_subdirectory(system)
 #add_subdirectory(wireless)
 
 add_subdirectory(builtin) # must be last
-
-nuttx_generate_kconfig()

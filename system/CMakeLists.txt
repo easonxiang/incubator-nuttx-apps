@@ -37,5 +37,3 @@ add_subdirectory(readline)
 #add_subdirectory(usbmsc)
 #add_subdirectory(vi)
 #add_subdirectory(zmodem)
-
-nuttx_generate_kconfig(MENUDESC "System Libraries and NSH Add-Ons")

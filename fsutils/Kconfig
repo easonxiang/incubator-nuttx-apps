@@ -1,0 +1,11 @@
+menu "File System Utilities"
+source "$APPSDIR/fsutils/mksmartfs/Kconfig"
+source "$APPSDIR/fsutils/ipcfg/Kconfig"
+source "$APPSDIR/fsutils/flash_eraseall/Kconfig"
+source "$APPSDIR/fsutils/mkmbr/Kconfig"
+source "$APPSDIR/fsutils/mkgpt/Kconfig"
+source "$APPSDIR/fsutils/mkfatfs/Kconfig"
+source "$APPSDIR/fsutils/inifile/Kconfig"
+source "$APPSDIR/fsutils/inih/Kconfig"
+source "$APPSDIR/fsutils/passwd/Kconfig"
+endmenu
