@@ -132,6 +132,8 @@ struct nsh_vtbl_s
   /* Ctrl tty or not */
 
   bool isctty;
+
+  uint8_t reserved[3];
 };
 
 /* This structure describes a console front-end that is based on stdin and

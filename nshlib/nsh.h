@@ -690,6 +690,7 @@ struct nsh_loop_s
   uint8_t   lp_state    : 2;   /* Loop state (see enume nsh_lp_e) */
 #ifndef CONFIG_NSH_DISABLE_ITEF
   uint8_t   lp_iendx;          /* Saved if-then-else-fi index */
+  uint8_t   reserved[2];
 #endif
   long      lp_topoffs;        /* Top of loop file offset */
 };

@@ -72,6 +72,7 @@ struct dd_s
   uint32_t sector;     /* The current sector number */
   uint32_t skip;       /* The number of sectors skipped on input */
   bool     eof;        /* true: The end of the input or output file has been hit */
+  uint8_t  reserved[3];
   uint16_t sectsize;   /* Size of one sector */
   uint16_t nbytes;     /* Number of valid bytes in the buffer */
   uint8_t *buffer;     /* Buffer of data to write to the output file */

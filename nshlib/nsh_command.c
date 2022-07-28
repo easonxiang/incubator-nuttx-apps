@@ -55,8 +55,8 @@ struct cmdmap_s
 {
   FAR const char *cmd;    /* Name of the command */
   nsh_cmd_t   handler;    /* Function that handles the command */
-  uint8_t     minargs;    /* Minimum number of arguments (including command) */
-  uint8_t     maxargs;    /* Maximum number of arguments (including command) */
+  uint16_t     minargs;    /* Minimum number of arguments (including command) */
+  uint16_t     maxargs;    /* Maximum number of arguments (including command) */
   FAR const char *usage;  /* Usage instructions for 'help' command */
 };
 
